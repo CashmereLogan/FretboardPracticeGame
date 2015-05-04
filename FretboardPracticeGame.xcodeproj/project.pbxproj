@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7750587F1AF7ECAA00DDB43C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7750587E1AF7ECAA00DDB43C /* AppDelegate.swift */; };
+		775058811AF7ECAA00DDB43C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775058801AF7ECAA00DDB43C /* ViewController.swift */; };
+		775058841AF7ECAA00DDB43C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 775058821AF7ECAA00DDB43C /* Main.storyboard */; };
+		775058861AF7ECAA00DDB43C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 775058851AF7ECAA00DDB43C /* Images.xcassets */; };
+		775058891AF7ECAA00DDB43C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 775058871AF7ECAA00DDB43C /* LaunchScreen.xib */; };
+		775058951AF7ECAA00DDB43C /* FretboardPracticeGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775058941AF7ECAA00DDB43C /* FretboardPracticeGameTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7750588F1AF7ECAA00DDB43C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 775058711AF7ECAA00DDB43C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 775058781AF7ECAA00DDB43C;
+			remoteInfo = FretboardPracticeGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		775058791AF7ECAA00DDB43C /* FretboardPracticeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FretboardPracticeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7750587D1AF7ECAA00DDB43C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7750587E1AF7ECAA00DDB43C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		775058801AF7ECAA00DDB43C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		775058831AF7ECAA00DDB43C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		775058851AF7ECAA00DDB43C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		775058881AF7ECAA00DDB43C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		7750588E1AF7ECAA00DDB43C /* FretboardPracticeGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FretboardPracticeGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		775058931AF7ECAA00DDB43C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		775058941AF7ECAA00DDB43C /* FretboardPracticeGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretboardPracticeGameTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		775058761AF7ECAA00DDB43C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7750588B1AF7ECAA00DDB43C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		775058701AF7ECAA00DDB43C = {
+			isa = PBXGroup;
+			children = (
+				7750587B1AF7ECAA00DDB43C /* FretboardPracticeGame */,
+				775058911AF7ECAA00DDB43C /* FretboardPracticeGameTests */,
+				7750587A1AF7ECAA00DDB43C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7750587A1AF7ECAA00DDB43C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				775058791AF7ECAA00DDB43C /* FretboardPracticeGame.app */,
+				7750588E1AF7ECAA00DDB43C /* FretboardPracticeGameTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7750587B1AF7ECAA00DDB43C /* FretboardPracticeGame */ = {
+			isa = PBXGroup;
+			children = (
+				7750587E1AF7ECAA00DDB43C /* AppDelegate.swift */,
+				775058801AF7ECAA00DDB43C /* ViewController.swift */,
+				775058821AF7ECAA00DDB43C /* Main.storyboard */,
+				775058851AF7ECAA00DDB43C /* Images.xcassets */,
+				775058871AF7ECAA00DDB43C /* LaunchScreen.xib */,
+				7750587C1AF7ECAA00DDB43C /* Supporting Files */,
+			);
+			path = FretboardPracticeGame;
+			sourceTree = "<group>";
+		};
+		7750587C1AF7ECAA00DDB43C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7750587D1AF7ECAA00DDB43C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		775058911AF7ECAA00DDB43C /* FretboardPracticeGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				775058941AF7ECAA00DDB43C /* FretboardPracticeGameTests.swift */,
+				775058921AF7ECAA00DDB43C /* Supporting Files */,
+			);
+			path = FretboardPracticeGameTests;
+			sourceTree = "<group>";
+		};
+		775058921AF7ECAA00DDB43C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				775058931AF7ECAA00DDB43C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		775058781AF7ECAA00DDB43C /* FretboardPracticeGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 775058981AF7ECAA00DDB43C /* Build configuration list for PBXNativeTarget "FretboardPracticeGame" */;
+			buildPhases = (
+				775058751AF7ECAA00DDB43C /* Sources */,
+				775058761AF7ECAA00DDB43C /* Frameworks */,
+				775058771AF7ECAA00DDB43C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FretboardPracticeGame;
+			productName = FretboardPracticeGame;
+			productReference = 775058791AF7ECAA00DDB43C /* FretboardPracticeGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7750588D1AF7ECAA00DDB43C /* FretboardPracticeGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7750589B1AF7ECAA00DDB43C /* Build configuration list for PBXNativeTarget "FretboardPracticeGameTests" */;
+			buildPhases = (
+				7750588A1AF7ECAA00DDB43C /* Sources */,
+				7750588B1AF7ECAA00DDB43C /* Frameworks */,
+				7750588C1AF7ECAA00DDB43C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				775058901AF7ECAA00DDB43C /* PBXTargetDependency */,
+			);
+			name = FretboardPracticeGameTests;
+			productName = FretboardPracticeGameTests;
+			productReference = 7750588E1AF7ECAA00DDB43C /* FretboardPracticeGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		775058711AF7ECAA00DDB43C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "DFA Film 11: Brian";
+				TargetAttributes = {
+					775058781AF7ECAA00DDB43C = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					7750588D1AF7ECAA00DDB43C = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 775058781AF7ECAA00DDB43C;
+					};
+				};
+			};
+			buildConfigurationList = 775058741AF7ECAA00DDB43C /* Build configuration list for PBXProject "FretboardPracticeGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 775058701AF7ECAA00DDB43C;
+			productRefGroup = 7750587A1AF7ECAA00DDB43C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				775058781AF7ECAA00DDB43C /* FretboardPracticeGame */,
+				7750588D1AF7ECAA00DDB43C /* FretboardPracticeGameTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		775058771AF7ECAA00DDB43C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				775058841AF7ECAA00DDB43C /* Main.storyboard in Resources */,
+				775058891AF7ECAA00DDB43C /* LaunchScreen.xib in Resources */,
+				775058861AF7ECAA00DDB43C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7750588C1AF7ECAA00DDB43C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		775058751AF7ECAA00DDB43C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				775058811AF7ECAA00DDB43C /* ViewController.swift in Sources */,
+				7750587F1AF7ECAA00DDB43C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7750588A1AF7ECAA00DDB43C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				775058951AF7ECAA00DDB43C /* FretboardPracticeGameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		775058901AF7ECAA00DDB43C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 775058781AF7ECAA00DDB43C /* FretboardPracticeGame */;
+			targetProxy = 7750588F1AF7ECAA00DDB43C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		775058821AF7ECAA00DDB43C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				775058831AF7ECAA00DDB43C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		775058871AF7ECAA00DDB43C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				775058881AF7ECAA00DDB43C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		775058961AF7ECAA00DDB43C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		775058971AF7ECAA00DDB43C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		775058991AF7ECAA00DDB43C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FretboardPracticeGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7750589A1AF7ECAA00DDB43C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FretboardPracticeGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7750589C1AF7ECAA00DDB43C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FretboardPracticeGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FretboardPracticeGame.app/FretboardPracticeGame";
+			};
+			name = Debug;
+		};
+		7750589D1AF7ECAA00DDB43C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FretboardPracticeGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FretboardPracticeGame.app/FretboardPracticeGame";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		775058741AF7ECAA00DDB43C /* Build configuration list for PBXProject "FretboardPracticeGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				775058961AF7ECAA00DDB43C /* Debug */,
+				775058971AF7ECAA00DDB43C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		775058981AF7ECAA00DDB43C /* Build configuration list for PBXNativeTarget "FretboardPracticeGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				775058991AF7ECAA00DDB43C /* Debug */,
+				7750589A1AF7ECAA00DDB43C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7750589B1AF7ECAA00DDB43C /* Build configuration list for PBXNativeTarget "FretboardPracticeGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7750589C1AF7ECAA00DDB43C /* Debug */,
+				7750589D1AF7ECAA00DDB43C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 775058711AF7ECAA00DDB43C /* Project object */;
+}
