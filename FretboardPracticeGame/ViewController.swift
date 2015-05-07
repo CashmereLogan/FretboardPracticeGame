@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var answerPrompt: UILabel!
     @IBOutlet weak var correctAnswerDisplay: UILabel!
+    @IBOutlet weak var correctCounter: UILabel!
+    @IBOutlet weak var wrongCounter: UILabel!
 
     var fretboardArray: [[Int]] = [[6], [12]]
     
@@ -33,6 +35,7 @@ class ViewController: UIViewController {
     var GString: [String] = ["G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G"]
     
     
+    
     @IBAction func startGame(sender: UIButton) {
         getRandomAnswer()
         correctAnswerDisplay.text! = randomAnswer
@@ -48,12 +51,14 @@ class ViewController: UIViewController {
         println(stringNumber)
         
         checkAnswer()
+        //NSThread.sleepForTimeInterval(1)
+        reset()
         
     }
     
     func getRandomAnswer(){
-        fretNumber = Int(arc4random_uniform(12)) + 1
-        stringNumber = Int(arc4random_uniform(6)) + 1
+        fretNumber = Int(arc4random_uniform(12))
+        stringNumber = Int(arc4random_uniform(6))
         
         getFretNote()
         
@@ -79,12 +84,26 @@ class ViewController: UIViewController {
         }
     }
     
+    var countRight = 0
+    var countWrong = 0
     func checkAnswer(){
         if(userAnswer == randomAnswer){
             answerPrompt.text! = "CORRECT"
+            countRight++
+            correctCounter.text! = "\(countRight)"
         }else{
             answerPrompt.text! = "WRONG"
+            countWrong++
+            wrongCounter.text! = "\(countWrong)"
         }
+    }
+    
+    func reset(){
+        //NSThread.sleepForTimeInterval(1)
+        answerPrompt.text! = ""
+        getRandomAnswer()
+        //NSThread.sleepForTimeInterval(0.5)
+        correctAnswerDisplay.text! = randomAnswer
     }
     
 
