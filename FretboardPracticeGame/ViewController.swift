@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var correctAnswerDisplay: UILabel!
     @IBOutlet weak var correctCounter: UILabel!
     @IBOutlet weak var wrongCounter: UILabel!
+    @IBOutlet weak var timerView: UILabel!
+    @IBOutlet weak var restartPrompt: UILabel!
 
     var fretboardArray: [[Int]] = [[6], [12]]
     
@@ -35,10 +37,12 @@ class ViewController: UIViewController {
     var GString: [String] = ["G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G"]
     
     
-    
     @IBAction func startGame(sender: UIButton) {
         getRandomAnswer()
         correctAnswerDisplay.text! = randomAnswer
+        var timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "checkTimer", userInfo: nil, repeats: false)
+        timer.fire()
+        
     }
     
     @IBAction func noteButtonPress(sender: UIButton) {
@@ -51,7 +55,6 @@ class ViewController: UIViewController {
         println(stringNumber)
         
         checkAnswer()
-        //NSThread.sleepForTimeInterval(1)
         reset()
         
     }
@@ -84,28 +87,49 @@ class ViewController: UIViewController {
         }
     }
     
-    var countRight = 0
-    var countWrong = 0
+    var score = 0
     func checkAnswer(){
         if(userAnswer == randomAnswer){
             answerPrompt.text! = "CORRECT"
-            countRight++
-            correctCounter.text! = "\(countRight)"
+            score = score + 100
+            correctCounter.text! = "\(score)"
         }else{
             answerPrompt.text! = "WRONG"
-            countWrong++
-            wrongCounter.text! = "\(countWrong)"
+            if(score == 0){
+                score = 0
+            }else{
+                score = score - 50
+            }
+            correctCounter.text! = "\(score)"
         }
     }
     
     func reset(){
         //NSThread.sleepForTimeInterval(1)
-        answerPrompt.text! = ""
+        //answerPrompt.text! = ""
         getRandomAnswer()
         //NSThread.sleepForTimeInterval(0.5)
         correctAnswerDisplay.text! = randomAnswer
     }
     
+    var secondCount = 60
+    
+    func checkTimer(){
+        timerView.text! = ("\(secondCount)")
+        secondCount = secondCount - 1
+        if (secondCount == 0){
+            endGame()
+        }
+    }
+    
+    func endGame(){
+        correctCounter.text! = ""
+        correctAnswerDisplay.text! = ""
+        answerPrompt.text! = "\(score)"
+        timerView.text! = ""
+        restartPrompt.text! = "Touch Start to Play Again"
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
