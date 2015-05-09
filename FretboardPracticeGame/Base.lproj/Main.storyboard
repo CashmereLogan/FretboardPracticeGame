@@ -294,15 +294,15 @@
                                     <action selector="noteButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sBv-cj-gHa"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scv-es-y7O">
-                                <rect key="frame" x="190" y="72" width="287" height="108"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scv-es-y7O">
+                                <rect key="frame" x="8" y="11" width="135" height="73"/>
                                 <color key="backgroundColor" red="0.098039215686274508" green="0.31372549019607843" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="56"/>
+                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="25"/>
                                 <color key="textColor" red="0.98039215690000003" green="0.83921568629999999" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17F-DQ-aoD">
-                                <rect key="frame" x="69" y="189" width="84" height="36"/>
+                                <rect key="frame" x="171" y="23" width="84" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="38"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" red="0.098039215686274508" green="0.31372549019607843" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
@@ -313,7 +313,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cL-Z6-a1j">
-                                <rect key="frame" x="560" y="49" width="76" height="37"/>
+                                <rect key="frame" x="412" y="19" width="76" height="37"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="27"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -326,23 +326,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jx-lh-8wV">
-                                <rect key="frame" x="294" y="179" width="79" height="46"/>
+                                <rect key="frame" x="0.0" y="271" width="79" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaR-mE-1Fc">
-                                <rect key="frame" x="166" y="225" width="311" height="21"/>
+                                <rect key="frame" x="125" y="236" width="311" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8Q-Rj-W4B">
-                                <rect key="frame" x="535" y="81" width="126" height="55"/>
+                                <rect key="frame" x="496" y="23" width="126" height="55"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="29"/>
                                 <color key="textColor" red="1" green="0.87024712559999995" blue="0.27289944890000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fretboard pic makeshift.png" translatesAutoresizingMaskIntoConstraints="NO" id="d5A-dD-mU5">
+                                <rect key="frame" x="33" y="86" width="600" height="142"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -382,10 +385,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="189.5" y="341.5"/>
+            <point key="canvasLocation" x="192.5" y="378.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="ButtonLoganGuitar Image.png" width="650" height="350"/>
+        <image name="fretboard pic makeshift.png" width="1850" height="500"/>
     </resources>
 </document>

@@ -95,7 +95,7 @@ class ViewController: UIViewController {
     }
     
     func getFretNote(){
-        if(stringNumber == 1 || stringNumber == 6){
+        if(stringNumber == 1){
             baseNote = "e"
             fretNote = eString[fretNumber]
         }else if(stringNumber == 2){
@@ -110,6 +110,9 @@ class ViewController: UIViewController {
         }else if(stringNumber == 5){
             baseNote = "A"
             fretNote = AString[fretNumber]
+        }else if(stringNumber == 6){
+            baseNote = "E"
+            fretNote = eString[fretNumber]
         }
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4070E2421AFDC89A00240ACA /* fretboard pic makeshift.png in Resources */ = {isa = PBXBuildFile; fileRef = 4070E2411AFDC89A00240ACA /* fretboard pic makeshift.png */; };
 		4098217A1AFDAC0200C87C8A /* ButtonLoganGuitar Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 409821791AFDAC0200C87C8A /* ButtonLoganGuitar Image.png */; };
 		7750587F1AF7ECAA00DDB43C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7750587E1AF7ECAA00DDB43C /* AppDelegate.swift */; };
 		775058811AF7ECAA00DDB43C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775058801AF7ECAA00DDB43C /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4070E2411AFDC89A00240ACA /* fretboard pic makeshift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fretboard pic makeshift.png"; sourceTree = "<group>"; };
 		409821791AFDAC0200C87C8A /* ButtonLoganGuitar Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonLoganGuitar Image.png"; sourceTree = "<group>"; };
 		775058791AF7ECAA00DDB43C /* FretboardPracticeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FretboardPracticeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7750587D1AF7ECAA00DDB43C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		7750587C1AF7ECAA00DDB43C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4070E2411AFDC89A00240ACA /* fretboard pic makeshift.png */,
 				409821791AFDAC0200C87C8A /* ButtonLoganGuitar Image.png */,
 				7750587D1AF7ECAA00DDB43C /* Info.plist */,
 			);
@@ -198,6 +201,7 @@
 			files = (
 				775058841AF7ECAA00DDB43C /* Main.storyboard in Resources */,
 				775058891AF7ECAA00DDB43C /* LaunchScreen.xib in Resources */,
+				4070E2421AFDC89A00240ACA /* fretboard pic makeshift.png in Resources */,
 				4098217A1AFDAC0200C87C8A /* ButtonLoganGuitar Image.png in Resources */,
 				775058861AF7ECAA00DDB43C /* Images.xcassets in Resources */,
 			);
