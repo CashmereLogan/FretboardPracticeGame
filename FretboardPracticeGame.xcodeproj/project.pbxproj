@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4098217A1AFDAC0200C87C8A /* ButtonLoganGuitar Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 409821791AFDAC0200C87C8A /* ButtonLoganGuitar Image.png */; };
 		7750587F1AF7ECAA00DDB43C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7750587E1AF7ECAA00DDB43C /* AppDelegate.swift */; };
 		775058811AF7ECAA00DDB43C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775058801AF7ECAA00DDB43C /* ViewController.swift */; };
 		775058841AF7ECAA00DDB43C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 775058821AF7ECAA00DDB43C /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		409821791AFDAC0200C87C8A /* ButtonLoganGuitar Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonLoganGuitar Image.png"; sourceTree = "<group>"; };
 		775058791AF7ECAA00DDB43C /* FretboardPracticeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FretboardPracticeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7750587D1AF7ECAA00DDB43C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7750587E1AF7ECAA00DDB43C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		7750587C1AF7ECAA00DDB43C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				409821791AFDAC0200C87C8A /* ButtonLoganGuitar Image.png */,
 				7750587D1AF7ECAA00DDB43C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -161,6 +164,7 @@
 				TargetAttributes = {
 					775058781AF7ECAA00DDB43C = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = FZ89A5SZ7C;
 					};
 					7750588D1AF7ECAA00DDB43C = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -194,6 +198,7 @@
 			files = (
 				775058841AF7ECAA00DDB43C /* Main.storyboard in Resources */,
 				775058891AF7ECAA00DDB43C /* LaunchScreen.xib in Resources */,
+				4098217A1AFDAC0200C87C8A /* ButtonLoganGuitar Image.png in Resources */,
 				775058861AF7ECAA00DDB43C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,9 +347,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FretboardPracticeGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -352,9 +360,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FretboardPracticeGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -411,6 +422,7 @@
 				7750589A1AF7ECAA00DDB43C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7750589B1AF7ECAA00DDB43C /* Build configuration list for PBXNativeTarget "FretboardPracticeGameTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +431,7 @@
 				7750589D1AF7ECAA00DDB43C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

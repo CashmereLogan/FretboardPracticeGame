@@ -20,15 +20,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var wrongCounter: UILabel!
     @IBOutlet weak var timerView: UILabel!
     @IBOutlet weak var restartPrompt: UILabel!
+    
+    var startBool = true
+    var buttonBool = true
 
     var fretboardArray: [[Int]] = [[6], [12]]
     
     var stringNumber = 0
     var fretNumber = 0
+    var secondCount = 15
     var randomAnswer = ""
     var baseNote = ""
     var fretNote = ""
     var userAnswer = ""
+    
+    var timer: NSTimer?
     
     var BString: [String] = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
     var AString: [String] = ["A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A"]
@@ -38,24 +44,44 @@ class ViewController: UIViewController {
     
     
     @IBAction func startGame(sender: UIButton) {
-        getRandomAnswer()
-        correctAnswerDisplay.text! = randomAnswer
-        var timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "checkTimer", userInfo: nil, repeats: false)
-        timer.fire()
-        
+        if startBool{
+            answerPrompt.text! = ""
+            restartPrompt.text! = ""
+            getRandomAnswer()
+            correctAnswerDisplay.text! = randomAnswer
+            
+            startTimer()
+            startBool = false
+            buttonBool = true
+        }
+    }
+    
+    func startTimer(){
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateTime", userInfo: nil, repeats: true)
+        timer!.fire()
+    }
+    func updateTime(){
+        timerView.text! = ("\(secondCount)")
+        secondCount = secondCount - 1
+        if (secondCount < 0){
+            endGame()
+            timer!.invalidate()
+            secondCount = 15
+        }
     }
     
     @IBAction func noteButtonPress(sender: UIButton) {
+        if buttonBool{
+            var selectedAnswer = sender.titleLabel?.text
+            userAnswer = selectedAnswer!
         
-        var selectedAnswer = sender.titleLabel?.text
-        userAnswer = selectedAnswer!
         
+            println(fretNumber)
+            println(stringNumber)
         
-        println(fretNumber)
-        println(stringNumber)
-        
-        checkAnswer()
-        reset()
+            checkAnswer()
+            reset()
+        }
         
     }
     
@@ -112,22 +138,15 @@ class ViewController: UIViewController {
         correctAnswerDisplay.text! = randomAnswer
     }
     
-    var secondCount = 60
-    
-    func checkTimer(){
-        timerView.text! = ("\(secondCount)")
-        secondCount = secondCount - 1
-        if (secondCount == 0){
-            endGame()
-        }
-    }
-    
     func endGame(){
         correctCounter.text! = ""
         correctAnswerDisplay.text! = ""
         answerPrompt.text! = "\(score)"
-        timerView.text! = ""
+        score = 0
+        //timerView.text! = ""
         restartPrompt.text! = "Touch Start to Play Again"
+        startBool = true
+        buttonBool = false
         
     }
 
