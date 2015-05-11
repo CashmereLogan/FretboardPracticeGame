@@ -92,7 +92,7 @@ class ViewController: UIViewController {
     
     func getRandomAnswer(){
         fretNumber = Int(arc4random_uniform(12))
-        stringNumber = Int(arc4random_uniform(6))
+        stringNumber = Int(arc4random_uniform(6)) + 1
         
         let notePosition = getFretNote()
         
