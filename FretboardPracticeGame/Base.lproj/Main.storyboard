@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
@@ -295,23 +295,12 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scv-es-y7O">
-                                <rect key="frame" x="8" y="11" width="135" height="73"/>
+                                <rect key="frame" x="16" y="6" width="135" height="73"/>
                                 <color key="backgroundColor" red="0.098039215686274508" green="0.31372549019607843" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="25"/>
                                 <color key="textColor" red="0.98039215690000003" green="0.83921568629999999" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17F-DQ-aoD">
-                                <rect key="frame" x="171" y="23" width="84" height="36"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="38"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleColor" red="0.098039215686274508" green="0.31372549019607843" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r1c-El-qvY"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cL-Z6-a1j">
                                 <rect key="frame" x="412" y="19" width="76" height="37"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="27"/>
@@ -346,14 +335,33 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fretboard pic makeshift.png" translatesAutoresizingMaskIntoConstraints="NO" id="d5A-dD-mU5">
                                 <rect key="frame" x="33" y="86" width="600" height="142"/>
                             </imageView>
-                            <label opaque="NO" clearsContextBeforeDrawing="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iG-P6-rov">
-                                <rect key="frame" x="338" y="-2" width="40" height="90"/>
+                            <label opaque="NO" clearsContextBeforeDrawing="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iG-P6-rov">
+                                <rect key="frame" x="338" y="-5" width="43" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="sQk-Gf-QWW"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="135"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17F-DQ-aoD">
+                                <rect key="frame" x="192" y="25" width="84" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="38"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.098039215686274508" green="0.31372549019607843" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r1c-El-qvY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0iG-P6-rov" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="338" id="0hQ-m9-bDA"/>
+                            <constraint firstItem="0iG-P6-rov" firstAttribute="leading" secondItem="17F-DQ-aoD" secondAttribute="trailing" constant="83" id="agf-qG-pbX"/>
+                            <constraint firstItem="0iG-P6-rov" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-5" id="h4r-l2-HnC"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="hfn-uC-2EN"/>
@@ -377,6 +385,9 @@
                                 <exclude reference="Qv3-rJ-wDi"/>
                                 <exclude reference="K6m-Yh-opy"/>
                             </mask>
+                            <mask key="constraints">
+                                <exclude reference="agf-qG-pbX"/>
+                            </mask>
                         </variation>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -386,6 +397,8 @@
                         <outlet property="correctAnswerDisplay" destination="0jx-lh-8wV" id="ZfD-DZ-ktp"/>
                         <outlet property="correctCounter" destination="x8Q-Rj-W4B" id="jw8-wY-nHI"/>
                         <outlet property="noteDot" destination="0iG-P6-rov" id="SgD-K1-LDQ"/>
+                        <outlet property="noteDotX" destination="0hQ-m9-bDA" id="8sX-BS-ANy"/>
+                        <outlet property="noteDotY" destination="h4r-l2-HnC" id="snC-cK-8Wu"/>
                         <outlet property="restartPrompt" destination="MaR-mE-1Fc" id="gBn-ra-wco"/>
                         <outlet property="timerView" destination="Tz2-B0-QLV" id="qKy-ck-Pzh"/>
                     </connections>
