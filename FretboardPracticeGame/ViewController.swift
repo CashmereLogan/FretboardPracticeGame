@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     
     var stringNumber = 0
     var fretNumber = 0
-    var secondCount = 15
+    var secondCount = 30
     var randomAnswer = ""
     var baseNote = ""
     var fretNote = ""
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
             answerPrompt.text! = ""
             restartPrompt.text! = ""
             getRandomAnswer()
-            correctAnswerDisplay.text! = randomAnswer
+            //correctAnswerDisplay.text! = randomAnswer
             
             startTimer()
             startBool = false
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
         if (secondCount < 0){
             endGame()
             timer!.invalidate()
-            secondCount = 15
+            secondCount = 30
         }
     }
     
@@ -161,11 +161,8 @@ class ViewController: UIViewController {
     }
     
     func reset(){
-        //NSThread.sleepForTimeInterval(1)
-        //answerPrompt.text! = ""
         getRandomAnswer()
-        //NSThread.sleepForTimeInterval(0.5)
-        correctAnswerDisplay.text! = randomAnswer
+        //correctAnswerDisplay.text! = randomAnswer
     }
     
     func endGame(){
@@ -173,7 +170,6 @@ class ViewController: UIViewController {
         correctAnswerDisplay.text! = ""
         answerPrompt.text! = "\(score)"
         score = 0
-        //timerView.text! = ""
         restartPrompt.text! = "Touch Start to Play Again"
         startBool = true
         buttonBool = false
