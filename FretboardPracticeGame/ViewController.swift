@@ -22,8 +22,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var restartPrompt: UILabel!
     
     @IBOutlet weak var noteDot: UILabel!
-    @IBOutlet weak var noteDotX: NSLayoutConstraint!
-    @IBOutlet weak var noteDotY: NSLayoutConstraint!
 
    
     
@@ -94,53 +92,47 @@ class ViewController: UIViewController {
         fretNumber = Int(arc4random_uniform(12))
         stringNumber = Int(arc4random_uniform(6))
         
-        let notePosition = getFretNote()
-        
-        noteDotX.constant = notePosition.x
-        noteDotY.constant = notePosition.y
-        self.view.layoutIfNeeded()
+        getFretNote()
         
         randomAnswer = fretNote
     }
     
-    func getFretNote() -> CGPoint {
+    func getFretNote(){
         
         var fretX: [CGFloat] = [44, 90, 142, 196, 253, 309, 364, 414, 458, 500, 540, 577]
-        var newOrigin = CGPointZero
         if(stringNumber == 1){
             baseNote = "e"
             fretNote = eString[fretNumber]
             //noteDot.frame.origin.y = 24
-            return CGPointMake(fretX[fretNumber], 24)
+            noteDot.frame.origin = CGPointMake(fretX[fretNumber], 24)
         }else if(stringNumber == 2){
             baseNote = "B"
             fretNote = BString[fretNumber]
             //noteDot.frame.origin.y = 47
-            return CGPointMake(fretX[fretNumber], 47)
+            noteDot.frame.origin = CGPointMake(fretX[fretNumber], 47)
         }else if(stringNumber == 3){
             baseNote = "G"
             fretNote = GString[fretNumber]
             //noteDot.frame.origin.y = 68
-            return CGPointMake(fretX[fretNumber], 68)
+            noteDot.frame.origin = CGPointMake(fretX[fretNumber], 68)
         }else if(stringNumber == 4){
             baseNote = "D"
             fretNote = DString[fretNumber]
             //noteDot.frame.origin.y = 89
-            return CGPointMake(fretX[fretNumber], 89)
+            noteDot.frame.origin = CGPointMake(fretX[fretNumber], 89)
         }else if(stringNumber == 5){
             baseNote = "A"
             fretNote = AString[fretNumber]
             //noteDot.frame.origin.y = 110
-            return CGPointMake(fretX[fretNumber], 110)
+            noteDot.frame.origin = CGPointMake(fretX[fretNumber], 110)
         }else if(stringNumber == 6){
             baseNote = "E"
             fretNote = eString[fretNumber]
             //noteDot.frame.origin.y = 129
-            return CGPointMake(fretX[fretNumber], 129)
+            noteDot.frame.origin = CGPointMake(fretX[fretNumber], 129)
         }
-        
-        println("did not return a CGPoint. returning (0,0)")
-        return CGPointZero
+        //noteDot.frame.origin.x = fretX[fretNumber]
+        println("X: \(noteDot.frame.origin)")
     }
     
     var score = 0
