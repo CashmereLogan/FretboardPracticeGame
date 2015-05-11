@@ -346,6 +346,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fretboard pic makeshift.png" translatesAutoresizingMaskIntoConstraints="NO" id="d5A-dD-mU5">
                                 <rect key="frame" x="33" y="86" width="600" height="142"/>
                             </imageView>
+                            <label opaque="NO" clearsContextBeforeDrawing="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iG-P6-rov">
+                                <rect key="frame" x="338" y="-2" width="40" height="90"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="135"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -379,6 +385,7 @@
                         <outlet property="answerPrompt" destination="Scv-es-y7O" id="YDc-jl-jXs"/>
                         <outlet property="correctAnswerDisplay" destination="0jx-lh-8wV" id="ZfD-DZ-ktp"/>
                         <outlet property="correctCounter" destination="x8Q-Rj-W4B" id="jw8-wY-nHI"/>
+                        <outlet property="noteDot" destination="0iG-P6-rov" id="SgD-K1-LDQ"/>
                         <outlet property="restartPrompt" destination="MaR-mE-1Fc" id="gBn-ra-wco"/>
                         <outlet property="timerView" destination="Tz2-B0-QLV" id="qKy-ck-Pzh"/>
                     </connections>
