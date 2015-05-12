@@ -25,6 +25,14 @@ class StartScreen: UIViewController {
     }
     
     
+    @IBAction func launchClassicGame(sender: AnyObject) {
+        
+        let classicGame = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("classicGame") as! UIViewController
+        self.presentViewController(classicGame, animated: true, completion: nil)
+        
+        
+    }
+    
     
     
     
