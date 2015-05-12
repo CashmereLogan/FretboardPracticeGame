@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40139D531B01917A00614270 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40139D521B01917A00614270 /* StartScreen.swift */; };
 		4070E2421AFDC89A00240ACA /* fretboard pic makeshift.png in Resources */ = {isa = PBXBuildFile; fileRef = 4070E2411AFDC89A00240ACA /* fretboard pic makeshift.png */; };
 		4098217A1AFDAC0200C87C8A /* ButtonLoganGuitar Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 409821791AFDAC0200C87C8A /* ButtonLoganGuitar Image.png */; };
 		7750587F1AF7ECAA00DDB43C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7750587E1AF7ECAA00DDB43C /* AppDelegate.swift */; };
-		775058811AF7ECAA00DDB43C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775058801AF7ECAA00DDB43C /* ViewController.swift */; };
+		775058811AF7ECAA00DDB43C /* timedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775058801AF7ECAA00DDB43C /* timedGame.swift */; };
 		775058841AF7ECAA00DDB43C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 775058821AF7ECAA00DDB43C /* Main.storyboard */; };
 		775058861AF7ECAA00DDB43C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 775058851AF7ECAA00DDB43C /* Images.xcassets */; };
 		775058891AF7ECAA00DDB43C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 775058871AF7ECAA00DDB43C /* LaunchScreen.xib */; };
@@ -28,12 +29,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40139D521B01917A00614270 /* StartScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
 		4070E2411AFDC89A00240ACA /* fretboard pic makeshift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fretboard pic makeshift.png"; sourceTree = "<group>"; };
 		409821791AFDAC0200C87C8A /* ButtonLoganGuitar Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonLoganGuitar Image.png"; sourceTree = "<group>"; };
 		775058791AF7ECAA00DDB43C /* FretboardPracticeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FretboardPracticeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7750587D1AF7ECAA00DDB43C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7750587E1AF7ECAA00DDB43C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		775058801AF7ECAA00DDB43C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		775058801AF7ECAA00DDB43C /* timedGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timedGame.swift; sourceTree = "<group>"; };
 		775058831AF7ECAA00DDB43C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		775058851AF7ECAA00DDB43C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		775058881AF7ECAA00DDB43C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -82,7 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				7750587E1AF7ECAA00DDB43C /* AppDelegate.swift */,
-				775058801AF7ECAA00DDB43C /* ViewController.swift */,
+				775058801AF7ECAA00DDB43C /* timedGame.swift */,
+				40139D521B01917A00614270 /* StartScreen.swift */,
 				775058821AF7ECAA00DDB43C /* Main.storyboard */,
 				775058851AF7ECAA00DDB43C /* Images.xcassets */,
 				775058871AF7ECAA00DDB43C /* LaunchScreen.xib */,
@@ -221,8 +224,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				775058811AF7ECAA00DDB43C /* ViewController.swift in Sources */,
+				775058811AF7ECAA00DDB43C /* timedGame.swift in Sources */,
 				7750587F1AF7ECAA00DDB43C /* AppDelegate.swift in Sources */,
+				40139D531B01917A00614270 /* StartScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

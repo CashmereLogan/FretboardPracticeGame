@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class timedGame: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     
     var stringNumber = 0
     var fretNumber = 0
-    var secondCount = 15
+    var secondCount = 30
     var randomAnswer = ""
     var baseNote = ""
     var fretNote = ""
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
         if (secondCount < 0){
             endGame()
             timer!.invalidate()
-            secondCount = 15
+            secondCount = 30
         }
     }
     
