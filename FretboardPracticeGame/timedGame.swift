@@ -16,12 +16,9 @@ class timedGame: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    @IBOutlet weak var answerPrompt: UILabel!
-    @IBOutlet weak var correctAnswerDisplay: UILabel!
     @IBOutlet weak var correctCounter: UILabel!
     @IBOutlet weak var wrongCounter: UILabel!
     @IBOutlet weak var timerView: UILabel!
-    @IBOutlet weak var restartPrompt: UILabel!
     
     @IBOutlet weak var noteDot: UILabel!
     @IBOutlet weak var noteDotX: NSLayoutConstraint!
@@ -36,7 +33,7 @@ class timedGame: UIViewController {
     
     var buttonBool = false
     var pauseBool = true
-
+    
     var fretboardArray: [[Int]] = [[6], [12]]
     
     var stringNumber = 0
@@ -61,17 +58,15 @@ class timedGame: UIViewController {
     
     
     @IBAction func startGame(sender: UIButton?) {
-        correctCounter.text! = ""
-        answerPrompt.text! = ""
-        restartPrompt.text! = ""
+        correctCounter.text! = "0"
         getRandomAnswer()
-        //correctAnswerDisplay.text! = randomAnswer
             
         startTimer()
         buttonBool = true
         pauseBool = true
         pauseButton.hidden = false
         startButton.hidden = true
+        noteDot.hidden = false
     }
     
     func startTimer(){
@@ -155,11 +150,9 @@ class timedGame: UIViewController {
     var score = 0
     func checkAnswer(){
         if(userAnswer == randomAnswer){
-            answerPrompt.text! = "CORRECT"
             score = score + 100
             correctCounter.text! = "\(score)"
         }else{
-            answerPrompt.text! = "WRONG"
             if(score == 0){
                 score = 0
             }else{
@@ -171,37 +164,31 @@ class timedGame: UIViewController {
     
     func reset(){
         getRandomAnswer()
-        //correctAnswerDisplay.text! = randomAnswer
     }
     
     func endGame(){
-        correctCounter.text! = ""
-        correctAnswerDisplay.text! = ""
         secondCount = 30
         timerView.text! = "\(secondCount)"
         
-        answerPrompt.text! = "\(score)"
+        correctCounter.text! = "\(score)"
         score = 0
-        restartPrompt.text! = "Touch Start to Play Again"
         startButton.hidden = false
         buttonBool = false
         pauseButton.hidden = true
-        
+        noteDot.hidden = true
         
     }
     
     func endGameToStartNewGame(){
-        correctCounter.text! = ""
-        correctAnswerDisplay.text! = ""
+        correctCounter.text! = "0"
         secondCount = 30
         timerView.text! = "\(secondCount)"
         
-        answerPrompt.text! = ""
         score = 0
-        restartPrompt.text! = "Touch Start"
         startButton.hidden = false
         buttonBool = false
         pauseButton.hidden = true
+        noteDot.hidden = true
     }
     
     
