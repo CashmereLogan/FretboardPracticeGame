@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		40139D531B01917A00614270 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40139D521B01917A00614270 /* StartScreen.swift */; };
+		4045FAD91B0C4CED008C044E /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4045FAD81B0C4CED008C044E /* ContainerView.swift */; };
 		4070E2421AFDC89A00240ACA /* fretboard pic makeshift.png in Resources */ = {isa = PBXBuildFile; fileRef = 4070E2411AFDC89A00240ACA /* fretboard pic makeshift.png */; };
 		4098217A1AFDAC0200C87C8A /* ButtonLoganGuitar Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 409821791AFDAC0200C87C8A /* ButtonLoganGuitar Image.png */; };
 		7750587F1AF7ECAA00DDB43C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7750587E1AF7ECAA00DDB43C /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		40139D521B01917A00614270 /* StartScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
+		4045FAD81B0C4CED008C044E /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		4070E2411AFDC89A00240ACA /* fretboard pic makeshift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fretboard pic makeshift.png"; sourceTree = "<group>"; };
 		409821791AFDAC0200C87C8A /* ButtonLoganGuitar Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonLoganGuitar Image.png"; sourceTree = "<group>"; };
 		775058791AF7ECAA00DDB43C /* FretboardPracticeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FretboardPracticeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +92,7 @@
 				40139D521B01917A00614270 /* StartScreen.swift */,
 				77B4782B1B02782300BCE30E /* classicGame.swift */,
 				775058821AF7ECAA00DDB43C /* Main.storyboard */,
+				4045FAD81B0C4CED008C044E /* ContainerView.swift */,
 				775058851AF7ECAA00DDB43C /* Images.xcassets */,
 				775058871AF7ECAA00DDB43C /* LaunchScreen.xib */,
 				7750587C1AF7ECAA00DDB43C /* Supporting Files */,
@@ -227,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4045FAD91B0C4CED008C044E /* ContainerView.swift in Sources */,
 				775058811AF7ECAA00DDB43C /* timedGame.swift in Sources */,
 				77B4782C1B02782400BCE30E /* classicGame.swift in Sources */,
 				7750587F1AF7ECAA00DDB43C /* AppDelegate.swift in Sources */,

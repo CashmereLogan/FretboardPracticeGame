@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class timedGame: UIViewController {
 
     override func viewDidLoad() {
@@ -25,10 +27,15 @@ class timedGame: UIViewController {
     @IBOutlet weak var noteDotX: NSLayoutConstraint!
     @IBOutlet weak var noteDotY: NSLayoutConstraint!
 
-   
+    @IBOutlet weak var blurConstrainty: NSLayoutConstraint!
     
-    var startBool = true
-    var buttonBool = true
+    @IBOutlet weak var blurView: UIVisualEffectView!
+   
+    @IBOutlet weak var pauseButton: UIButton!
+    @IBOutlet weak var startButton: UIButton!
+    
+    var buttonBool = false
+    var pauseBool = true
 
     var fretboardArray: [[Int]] = [[6], [12]]
     
@@ -39,6 +46,7 @@ class timedGame: UIViewController {
     var baseNote = ""
     var fretNote = ""
     var userAnswer = ""
+    var timeAtPause = 0
     
     var stringPosition = 0
     var fretPosition = 0
@@ -52,17 +60,18 @@ class timedGame: UIViewController {
     var GString: [String] = ["G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G"]
     
     
-    @IBAction func startGame(sender: UIButton) {
-        if startBool{
-            answerPrompt.text! = ""
-            restartPrompt.text! = ""
-            getRandomAnswer()
-            //correctAnswerDisplay.text! = randomAnswer
+    @IBAction func startGame(sender: UIButton?) {
+        correctCounter.text! = ""
+        answerPrompt.text! = ""
+        restartPrompt.text! = ""
+        getRandomAnswer()
+        //correctAnswerDisplay.text! = randomAnswer
             
-            startTimer()
-            startBool = false
-            buttonBool = true
-        }
+        startTimer()
+        buttonBool = true
+        pauseBool = true
+        pauseButton.hidden = false
+        startButton.hidden = true
     }
     
     func startTimer(){
@@ -168,14 +177,101 @@ class timedGame: UIViewController {
     func endGame(){
         correctCounter.text! = ""
         correctAnswerDisplay.text! = ""
+        secondCount = 30
+        timerView.text! = "\(secondCount)"
+        
         answerPrompt.text! = "\(score)"
         score = 0
         restartPrompt.text! = "Touch Start to Play Again"
-        startBool = true
+        startButton.hidden = false
         buttonBool = false
+        pauseButton.hidden = true
+        
         
     }
+    
+    func endGameToStartNewGame(){
+        correctCounter.text! = ""
+        correctAnswerDisplay.text! = ""
+        secondCount = 30
+        timerView.text! = "\(secondCount)"
+        
+        answerPrompt.text! = ""
+        score = 0
+        restartPrompt.text! = "Touch Start"
+        startButton.hidden = false
+        buttonBool = false
+        pauseButton.hidden = true
+    }
+    
+    
+    
+    
+    
+    
+    
+    @IBAction func pauseGame(sender: UIButton) {
+        if pauseBool{
+            
+        blurView.hidden = false
+        
+        let current = blurView.frame.origin
+        let height = blurView.frame.height
+        let offScreen = CGPointMake(current.x, current.y + height)
+        blurView.frame.origin = offScreen
+        
+        UIView.animateWithDuration(0.25, animations: {
+        self.blurView.frame.origin = current
+        })
+        
+        
+        timeAtPause = secondCount
+        timer!.invalidate()
+        pauseBool = false
+        }
+    }
+    @IBAction func resumeGame(sender: UIButton) {
+        pauseBool = false
+        let current = blurView.frame.origin
+        let height = blurView.frame.height
+        let offScreen = CGPointMake(current.x, current.y + height)
+        UIView.animateWithDuration(0.25, animations: {
+            self.blurView.frame.origin = offScreen
+            self.pauseBool = false
+            }, completion: { success in
+                self.blurView.hidden = true
+                self.blurView.frame.origin = current
+                self.secondCount = self.timeAtPause + 1
+                self.startTimer()
+                self.pauseBool = true
+        })
+        
 
+    }
+    @IBAction func restartGame(sender: UIButton) {
+        endGame()
+        reset()
+        timer?.invalidate()
+        blurView.hidden = true
+        startGame(nil)
+    }
+    @IBAction func goToMainMenu(sender: UIButton) {
+        NSNotificationCenter.defaultCenter().postNotificationName(returnToMainMenu, object: self)
+        delay(0.5){
+            self.blurView.hidden = true
+        }
+        endGameToStartNewGame()
+        reset()
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

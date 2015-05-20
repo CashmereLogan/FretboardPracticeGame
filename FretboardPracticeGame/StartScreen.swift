@@ -8,6 +8,10 @@
 
 import UIKit
 
+let launchTimedGame = "launchTimedGame"
+let launchClassicGame = "launchClassicGame"
+let returnToMainMenu = "returnToMainMenu"
+
 class StartScreen: UIViewController {
 
     override func viewDidLoad() {
@@ -17,18 +21,23 @@ class StartScreen: UIViewController {
     }
 
     
+    
     @IBAction func launchTimedGame(sender: UIButton) {
     
              //let quiz = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("quiz") as! QuizViewController
-        let timedGame = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("timedGame") as! UIViewController
-         self.presentViewController(timedGame, animated: true, completion: nil)
+        //let timedGame = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("timedGame") as! UIViewController
+         //self.presentViewController(timedGame, animated: true, completion: nil)
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("launchTimedGame", object: self)
     }
     
     
     @IBAction func launchClassicGame(sender: AnyObject) {
         
-        let classicGame = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("classicGame") as! UIViewController
-        self.presentViewController(classicGame, animated: true, completion: nil)
+        //let classicGame = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("classicGame") as! UIViewController
+        //self.presentViewController(classicGame, animated: true, completion: nil)
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("launchClassicGame", object: self)
         
         
     }
