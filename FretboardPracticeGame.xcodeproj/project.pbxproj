@@ -13,6 +13,9 @@
 		4098217A1AFDAC0200C87C8A /* ButtonLoganGuitar Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 409821791AFDAC0200C87C8A /* ButtonLoganGuitar Image.png */; };
 		40D0ABB81B0CD11000B75A27 /* Fretboard for App (Pink).png in Resources */ = {isa = PBXBuildFile; fileRef = 40D0ABB61B0CD11000B75A27 /* Fretboard for App (Pink).png */; };
 		40D0ABB91B0CD11000B75A27 /* Fretboard for App (White).png in Resources */ = {isa = PBXBuildFile; fileRef = 40D0ABB71B0CD11000B75A27 /* Fretboard for App (White).png */; };
+		40E272511B0D77A900A245C2 /* Button with Pink Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 40E2724F1B0D77A900A245C2 /* Button with Pink Background.png */; };
+		40E272521B0D77A900A245C2 /* Button with White Back.png in Resources */ = {isa = PBXBuildFile; fileRef = 40E272501B0D77A900A245C2 /* Button with White Back.png */; };
+		40E272541B0D78D000A245C2 /* Button with White Back and Thick Border.png in Resources */ = {isa = PBXBuildFile; fileRef = 40E272531B0D78D000A245C2 /* Button with White Back and Thick Border.png */; };
 		7750587F1AF7ECAA00DDB43C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7750587E1AF7ECAA00DDB43C /* AppDelegate.swift */; };
 		775058811AF7ECAA00DDB43C /* timedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775058801AF7ECAA00DDB43C /* timedGame.swift */; };
 		775058841AF7ECAA00DDB43C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 775058821AF7ECAA00DDB43C /* Main.storyboard */; };
@@ -39,6 +42,9 @@
 		409821791AFDAC0200C87C8A /* ButtonLoganGuitar Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonLoganGuitar Image.png"; sourceTree = "<group>"; };
 		40D0ABB61B0CD11000B75A27 /* Fretboard for App (Pink).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fretboard for App (Pink).png"; sourceTree = "<group>"; };
 		40D0ABB71B0CD11000B75A27 /* Fretboard for App (White).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fretboard for App (White).png"; sourceTree = "<group>"; };
+		40E2724F1B0D77A900A245C2 /* Button with Pink Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button with Pink Background.png"; sourceTree = "<group>"; };
+		40E272501B0D77A900A245C2 /* Button with White Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button with White Back.png"; sourceTree = "<group>"; };
+		40E272531B0D78D000A245C2 /* Button with White Back and Thick Border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button with White Back and Thick Border.png"; sourceTree = "<group>"; };
 		775058791AF7ECAA00DDB43C /* FretboardPracticeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FretboardPracticeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7750587D1AF7ECAA00DDB43C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7750587E1AF7ECAA00DDB43C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +113,9 @@
 		7750587C1AF7ECAA00DDB43C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				40E272531B0D78D000A245C2 /* Button with White Back and Thick Border.png */,
+				40E2724F1B0D77A900A245C2 /* Button with Pink Background.png */,
+				40E272501B0D77A900A245C2 /* Button with White Back.png */,
 				40D0ABB61B0CD11000B75A27 /* Fretboard for App (Pink).png */,
 				40D0ABB71B0CD11000B75A27 /* Fretboard for App (White).png */,
 				4070E2411AFDC89A00240ACA /* fretboard pic makeshift.png */,
@@ -214,13 +223,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40E272541B0D78D000A245C2 /* Button with White Back and Thick Border.png in Resources */,
 				775058841AF7ECAA00DDB43C /* Main.storyboard in Resources */,
 				775058891AF7ECAA00DDB43C /* LaunchScreen.xib in Resources */,
 				4070E2421AFDC89A00240ACA /* fretboard pic makeshift.png in Resources */,
 				40D0ABB81B0CD11000B75A27 /* Fretboard for App (Pink).png in Resources */,
+				40E272511B0D77A900A245C2 /* Button with Pink Background.png in Resources */,
 				40D0ABB91B0CD11000B75A27 /* Fretboard for App (White).png in Resources */,
 				4098217A1AFDAC0200C87C8A /* ButtonLoganGuitar Image.png in Resources */,
 				775058861AF7ECAA00DDB43C /* Images.xcassets in Resources */,
+				40E272521B0D77A900A245C2 /* Button with White Back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
