@@ -15,6 +15,7 @@
 		408BF5C71B38B406005865F7 /* Leaderboard-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 408BF5C61B38B406005865F7 /* Leaderboard-50.png */; };
 		408BF5C91B38B443005865F7 /* Info-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 408BF5C81B38B443005865F7 /* Info-50.png */; };
 		4098217A1AFDAC0200C87C8A /* ButtonLoganGuitar Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 409821791AFDAC0200C87C8A /* ButtonLoganGuitar Image.png */; };
+		40B5C0871B38C0A7004C35F8 /* Fretboard Brown No BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 40B5C0861B38C0A7004C35F8 /* Fretboard Brown No BG.png */; };
 		40D0ABB81B0CD11000B75A27 /* Fretboard for App (Pink).png in Resources */ = {isa = PBXBuildFile; fileRef = 40D0ABB61B0CD11000B75A27 /* Fretboard for App (Pink).png */; };
 		40D0ABB91B0CD11000B75A27 /* Fretboard for App (White).png in Resources */ = {isa = PBXBuildFile; fileRef = 40D0ABB71B0CD11000B75A27 /* Fretboard for App (White).png */; };
 		40E272511B0D77A900A245C2 /* Button with Pink Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 40E2724F1B0D77A900A245C2 /* Button with Pink Background.png */; };
@@ -51,6 +52,8 @@
 		408BF5C61B38B406005865F7 /* Leaderboard-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Leaderboard-50.png"; sourceTree = "<group>"; };
 		408BF5C81B38B443005865F7 /* Info-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Info-50.png"; sourceTree = "<group>"; };
 		409821791AFDAC0200C87C8A /* ButtonLoganGuitar Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonLoganGuitar Image.png"; sourceTree = "<group>"; };
+		40B5C0861B38C0A7004C35F8 /* Fretboard Brown No BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fretboard Brown No BG.png"; sourceTree = "<group>"; };
+		40B5C0891B38CAAF004C35F8 /* Fretboard Yellow No BG.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fretboard Yellow No BG.psd"; sourceTree = "<group>"; };
 		40D0ABB61B0CD11000B75A27 /* Fretboard for App (Pink).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fretboard for App (Pink).png"; sourceTree = "<group>"; };
 		40D0ABB71B0CD11000B75A27 /* Fretboard for App (White).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fretboard for App (White).png"; sourceTree = "<group>"; };
 		40E2724F1B0D77A900A245C2 /* Button with Pink Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button with Pink Background.png"; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 		7750587C1AF7ECAA00DDB43C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				40B5C0861B38C0A7004C35F8 /* Fretboard Brown No BG.png */,
+				40B5C0891B38CAAF004C35F8 /* Fretboard Yellow No BG.psd */,
 				408BF5C81B38B443005865F7 /* Info-50.png */,
 				408BF5C61B38B406005865F7 /* Leaderboard-50.png */,
 				408BF5C41B38B386005865F7 /* Settings-50.png */,
@@ -251,6 +256,7 @@
 				775058891AF7ECAA00DDB43C /* LaunchScreen.xib in Resources */,
 				40FE20931B1EB3A300A4489F /* Note Marker.png in Resources */,
 				4070E2421AFDC89A00240ACA /* fretboard pic makeshift.png in Resources */,
+				40B5C0871B38C0A7004C35F8 /* Fretboard Brown No BG.png in Resources */,
 				40D0ABB81B0CD11000B75A27 /* Fretboard for App (Pink).png in Resources */,
 				40E272511B0D77A900A245C2 /* Button with Pink Background.png in Resources */,
 				40FE20911B1EA86700A4489F /* Fretboard for App (Yellow with Strings).png in Resources */,
