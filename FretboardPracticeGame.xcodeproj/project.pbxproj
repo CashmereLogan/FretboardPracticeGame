@@ -10,6 +10,10 @@
 		40139D531B01917A00614270 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40139D521B01917A00614270 /* StartScreen.swift */; };
 		4045FAD91B0C4CED008C044E /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4045FAD81B0C4CED008C044E /* ContainerView.swift */; };
 		4070E2421AFDC89A00240ACA /* fretboard pic makeshift.png in Resources */ = {isa = PBXBuildFile; fileRef = 4070E2411AFDC89A00240ACA /* fretboard pic makeshift.png */; };
+		408BF5C31B38B302005865F7 /* Trophy-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 408BF5C21B38B302005865F7 /* Trophy-50.png */; };
+		408BF5C51B38B386005865F7 /* Settings-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 408BF5C41B38B386005865F7 /* Settings-50.png */; };
+		408BF5C71B38B406005865F7 /* Leaderboard-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 408BF5C61B38B406005865F7 /* Leaderboard-50.png */; };
+		408BF5C91B38B443005865F7 /* Info-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 408BF5C81B38B443005865F7 /* Info-50.png */; };
 		4098217A1AFDAC0200C87C8A /* ButtonLoganGuitar Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 409821791AFDAC0200C87C8A /* ButtonLoganGuitar Image.png */; };
 		40D0ABB81B0CD11000B75A27 /* Fretboard for App (Pink).png in Resources */ = {isa = PBXBuildFile; fileRef = 40D0ABB61B0CD11000B75A27 /* Fretboard for App (Pink).png */; };
 		40D0ABB91B0CD11000B75A27 /* Fretboard for App (White).png in Resources */ = {isa = PBXBuildFile; fileRef = 40D0ABB71B0CD11000B75A27 /* Fretboard for App (White).png */; };
@@ -42,6 +46,10 @@
 		40139D521B01917A00614270 /* StartScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
 		4045FAD81B0C4CED008C044E /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		4070E2411AFDC89A00240ACA /* fretboard pic makeshift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fretboard pic makeshift.png"; sourceTree = "<group>"; };
+		408BF5C21B38B302005865F7 /* Trophy-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Trophy-50.png"; sourceTree = "<group>"; };
+		408BF5C41B38B386005865F7 /* Settings-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings-50.png"; sourceTree = "<group>"; };
+		408BF5C61B38B406005865F7 /* Leaderboard-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Leaderboard-50.png"; sourceTree = "<group>"; };
+		408BF5C81B38B443005865F7 /* Info-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Info-50.png"; sourceTree = "<group>"; };
 		409821791AFDAC0200C87C8A /* ButtonLoganGuitar Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonLoganGuitar Image.png"; sourceTree = "<group>"; };
 		40D0ABB61B0CD11000B75A27 /* Fretboard for App (Pink).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fretboard for App (Pink).png"; sourceTree = "<group>"; };
 		40D0ABB71B0CD11000B75A27 /* Fretboard for App (White).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fretboard for App (White).png"; sourceTree = "<group>"; };
@@ -119,6 +127,10 @@
 		7750587C1AF7ECAA00DDB43C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				408BF5C81B38B443005865F7 /* Info-50.png */,
+				408BF5C61B38B406005865F7 /* Leaderboard-50.png */,
+				408BF5C41B38B386005865F7 /* Settings-50.png */,
+				408BF5C21B38B302005865F7 /* Trophy-50.png */,
 				40FE20921B1EB3A300A4489F /* Note Marker.png */,
 				40FE20901B1EA86700A4489F /* Fretboard for App (Yellow with Strings).png */,
 				40FE208E1B1EA3C500A4489F /* Button with White Back and Thick Border.png */,
@@ -234,6 +246,8 @@
 			files = (
 				40FE208F1B1EA3C500A4489F /* Button with White Back and Thick Border.png in Resources */,
 				775058841AF7ECAA00DDB43C /* Main.storyboard in Resources */,
+				408BF5C91B38B443005865F7 /* Info-50.png in Resources */,
+				408BF5C31B38B302005865F7 /* Trophy-50.png in Resources */,
 				775058891AF7ECAA00DDB43C /* LaunchScreen.xib in Resources */,
 				40FE20931B1EB3A300A4489F /* Note Marker.png in Resources */,
 				4070E2421AFDC89A00240ACA /* fretboard pic makeshift.png in Resources */,
@@ -243,7 +257,9 @@
 				40D0ABB91B0CD11000B75A27 /* Fretboard for App (White).png in Resources */,
 				40FE208D1B1EA31800A4489F /* Fretboard for App (Yellow).png in Resources */,
 				4098217A1AFDAC0200C87C8A /* ButtonLoganGuitar Image.png in Resources */,
+				408BF5C71B38B406005865F7 /* Leaderboard-50.png in Resources */,
 				775058861AF7ECAA00DDB43C /* Images.xcassets in Resources */,
+				408BF5C51B38B386005865F7 /* Settings-50.png in Resources */,
 				40E272521B0D77A900A245C2 /* Button with White Back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
