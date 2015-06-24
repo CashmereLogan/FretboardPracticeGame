@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		40139D531B01917A00614270 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40139D521B01917A00614270 /* StartScreen.swift */; };
+		401C605D1B3A7D6D00594F66 /* PauseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C605C1B3A7D6D00594F66 /* PauseMenu.swift */; };
+		40396FED1B3A17A2006310B2 /* ClassicGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40396FEC1B3A17A2006310B2 /* ClassicGame.swift */; };
+		40396FEF1B3A5091006310B2 /* Play-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 40396FEE1B3A5091006310B2 /* Play-50.png */; };
+		40396FF11B3A5097006310B2 /* Home-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 40396FF01B3A5097006310B2 /* Home-50.png */; };
+		40396FF31B3A509F006310B2 /* Restart-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 40396FF21B3A509F006310B2 /* Restart-50.png */; };
 		4045FAD91B0C4CED008C044E /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4045FAD81B0C4CED008C044E /* ContainerView.swift */; };
 		4070E2421AFDC89A00240ACA /* fretboard pic makeshift.png in Resources */ = {isa = PBXBuildFile; fileRef = 4070E2411AFDC89A00240ACA /* fretboard pic makeshift.png */; };
 		408BF5C31B38B302005865F7 /* Trophy-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 408BF5C21B38B302005865F7 /* Trophy-50.png */; };
@@ -20,6 +25,8 @@
 		40D0ABB91B0CD11000B75A27 /* Fretboard for App (White).png in Resources */ = {isa = PBXBuildFile; fileRef = 40D0ABB71B0CD11000B75A27 /* Fretboard for App (White).png */; };
 		40E272511B0D77A900A245C2 /* Button with Pink Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 40E2724F1B0D77A900A245C2 /* Button with Pink Background.png */; };
 		40E272521B0D77A900A245C2 /* Button with White Back.png in Resources */ = {isa = PBXBuildFile; fileRef = 40E272501B0D77A900A245C2 /* Button with White Back.png */; };
+		40F532911B3A884400A37E73 /* Arrow-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F532901B3A884400A37E73 /* Arrow-50.png */; };
+		40F532931B3A8BAF00A37E73 /* Home Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F532921B3A8BAF00A37E73 /* Home Filled-50.png */; };
 		40FE208D1B1EA31800A4489F /* Fretboard for App (Yellow).png in Resources */ = {isa = PBXBuildFile; fileRef = 40FE208C1B1EA31800A4489F /* Fretboard for App (Yellow).png */; };
 		40FE208F1B1EA3C500A4489F /* Button with White Back and Thick Border.png in Resources */ = {isa = PBXBuildFile; fileRef = 40FE208E1B1EA3C500A4489F /* Button with White Back and Thick Border.png */; };
 		40FE20911B1EA86700A4489F /* Fretboard for App (Yellow with Strings).png in Resources */ = {isa = PBXBuildFile; fileRef = 40FE20901B1EA86700A4489F /* Fretboard for App (Yellow with Strings).png */; };
@@ -30,7 +37,6 @@
 		775058861AF7ECAA00DDB43C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 775058851AF7ECAA00DDB43C /* Images.xcassets */; };
 		775058891AF7ECAA00DDB43C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 775058871AF7ECAA00DDB43C /* LaunchScreen.xib */; };
 		775058951AF7ECAA00DDB43C /* FretboardPracticeGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775058941AF7ECAA00DDB43C /* FretboardPracticeGameTests.swift */; };
-		77B4782C1B02782400BCE30E /* classicGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B4782B1B02782300BCE30E /* classicGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +51,12 @@
 
 /* Begin PBXFileReference section */
 		40139D521B01917A00614270 /* StartScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
+		401C605C1B3A7D6D00594F66 /* PauseMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseMenu.swift; sourceTree = "<group>"; };
+		40396FEB1B3A1504006310B2 /* FretboardPracticeGame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FretboardPracticeGame.entitlements; sourceTree = "<group>"; };
+		40396FEC1B3A17A2006310B2 /* ClassicGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicGame.swift; sourceTree = "<group>"; };
+		40396FEE1B3A5091006310B2 /* Play-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play-50.png"; sourceTree = "<group>"; };
+		40396FF01B3A5097006310B2 /* Home-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-50.png"; sourceTree = "<group>"; };
+		40396FF21B3A509F006310B2 /* Restart-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Restart-50.png"; sourceTree = "<group>"; };
 		4045FAD81B0C4CED008C044E /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		4070E2411AFDC89A00240ACA /* fretboard pic makeshift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fretboard pic makeshift.png"; sourceTree = "<group>"; };
 		408BF5C21B38B302005865F7 /* Trophy-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Trophy-50.png"; sourceTree = "<group>"; };
@@ -58,6 +70,8 @@
 		40D0ABB71B0CD11000B75A27 /* Fretboard for App (White).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fretboard for App (White).png"; sourceTree = "<group>"; };
 		40E2724F1B0D77A900A245C2 /* Button with Pink Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button with Pink Background.png"; sourceTree = "<group>"; };
 		40E272501B0D77A900A245C2 /* Button with White Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button with White Back.png"; sourceTree = "<group>"; };
+		40F532901B3A884400A37E73 /* Arrow-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrow-50.png"; sourceTree = "<group>"; };
+		40F532921B3A8BAF00A37E73 /* Home Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home Filled-50.png"; sourceTree = "<group>"; };
 		40FE208C1B1EA31800A4489F /* Fretboard for App (Yellow).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fretboard for App (Yellow).png"; sourceTree = "<group>"; };
 		40FE208E1B1EA3C500A4489F /* Button with White Back and Thick Border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button with White Back and Thick Border.png"; sourceTree = "<group>"; };
 		40FE20901B1EA86700A4489F /* Fretboard for App (Yellow with Strings).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fretboard for App (Yellow with Strings).png"; sourceTree = "<group>"; };
@@ -72,7 +86,6 @@
 		7750588E1AF7ECAA00DDB43C /* FretboardPracticeGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FretboardPracticeGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		775058931AF7ECAA00DDB43C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		775058941AF7ECAA00DDB43C /* FretboardPracticeGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretboardPracticeGameTests.swift; sourceTree = "<group>"; };
-		77B4782B1B02782300BCE30E /* classicGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = classicGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +127,12 @@
 		7750587B1AF7ECAA00DDB43C /* FretboardPracticeGame */ = {
 			isa = PBXGroup;
 			children = (
+				40396FEB1B3A1504006310B2 /* FretboardPracticeGame.entitlements */,
 				7750587E1AF7ECAA00DDB43C /* AppDelegate.swift */,
 				775058801AF7ECAA00DDB43C /* timedGame.swift */,
+				40396FEC1B3A17A2006310B2 /* ClassicGame.swift */,
 				40139D521B01917A00614270 /* StartScreen.swift */,
-				77B4782B1B02782300BCE30E /* classicGame.swift */,
+				401C605C1B3A7D6D00594F66 /* PauseMenu.swift */,
 				775058821AF7ECAA00DDB43C /* Main.storyboard */,
 				4045FAD81B0C4CED008C044E /* ContainerView.swift */,
 				775058851AF7ECAA00DDB43C /* Images.xcassets */,
@@ -130,8 +145,13 @@
 		7750587C1AF7ECAA00DDB43C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				40396FF21B3A509F006310B2 /* Restart-50.png */,
+				40396FF01B3A5097006310B2 /* Home-50.png */,
+				40396FEE1B3A5091006310B2 /* Play-50.png */,
 				40B5C0861B38C0A7004C35F8 /* Fretboard Brown No BG.png */,
 				40B5C0891B38CAAF004C35F8 /* Fretboard Yellow No BG.psd */,
+				40F532921B3A8BAF00A37E73 /* Home Filled-50.png */,
+				40F532901B3A884400A37E73 /* Arrow-50.png */,
 				408BF5C81B38B443005865F7 /* Info-50.png */,
 				408BF5C61B38B406005865F7 /* Leaderboard-50.png */,
 				408BF5C41B38B386005865F7 /* Settings-50.png */,
@@ -218,6 +238,11 @@
 					775058781AF7ECAA00DDB43C = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = FZ89A5SZ7C;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					7750588D1AF7ECAA00DDB43C = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -250,22 +275,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				40FE208F1B1EA3C500A4489F /* Button with White Back and Thick Border.png in Resources */,
+				40396FF31B3A509F006310B2 /* Restart-50.png in Resources */,
 				775058841AF7ECAA00DDB43C /* Main.storyboard in Resources */,
 				408BF5C91B38B443005865F7 /* Info-50.png in Resources */,
 				408BF5C31B38B302005865F7 /* Trophy-50.png in Resources */,
 				775058891AF7ECAA00DDB43C /* LaunchScreen.xib in Resources */,
+				40F532931B3A8BAF00A37E73 /* Home Filled-50.png in Resources */,
 				40FE20931B1EB3A300A4489F /* Note Marker.png in Resources */,
 				4070E2421AFDC89A00240ACA /* fretboard pic makeshift.png in Resources */,
 				40B5C0871B38C0A7004C35F8 /* Fretboard Brown No BG.png in Resources */,
 				40D0ABB81B0CD11000B75A27 /* Fretboard for App (Pink).png in Resources */,
+				40396FF11B3A5097006310B2 /* Home-50.png in Resources */,
 				40E272511B0D77A900A245C2 /* Button with Pink Background.png in Resources */,
 				40FE20911B1EA86700A4489F /* Fretboard for App (Yellow with Strings).png in Resources */,
 				40D0ABB91B0CD11000B75A27 /* Fretboard for App (White).png in Resources */,
 				40FE208D1B1EA31800A4489F /* Fretboard for App (Yellow).png in Resources */,
 				4098217A1AFDAC0200C87C8A /* ButtonLoganGuitar Image.png in Resources */,
 				408BF5C71B38B406005865F7 /* Leaderboard-50.png in Resources */,
+				40396FEF1B3A5091006310B2 /* Play-50.png in Resources */,
 				775058861AF7ECAA00DDB43C /* Images.xcassets in Resources */,
 				408BF5C51B38B386005865F7 /* Settings-50.png in Resources */,
+				40F532911B3A884400A37E73 /* Arrow-50.png in Resources */,
 				40E272521B0D77A900A245C2 /* Button with White Back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,11 +314,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40396FED1B3A17A2006310B2 /* ClassicGame.swift in Sources */,
 				4045FAD91B0C4CED008C044E /* ContainerView.swift in Sources */,
 				775058811AF7ECAA00DDB43C /* timedGame.swift in Sources */,
-				77B4782C1B02782400BCE30E /* classicGame.swift in Sources */,
 				7750587F1AF7ECAA00DDB43C /* AppDelegate.swift in Sources */,
 				40139D531B01917A00614270 /* StartScreen.swift in Sources */,
+				401C605D1B3A7D6D00594F66 /* PauseMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

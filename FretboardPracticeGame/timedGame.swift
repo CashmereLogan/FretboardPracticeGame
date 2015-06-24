@@ -13,6 +13,9 @@ import UIKit
 class timedGame: UIViewController {
 
     override func viewDidLoad() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resumeGame", name: resumeGameNot, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "restartGame", name: restartGameNot, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "goToHome", name: goToHomeNot, object: nil)
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -20,7 +23,12 @@ class timedGame: UIViewController {
     override func viewDidAppear(animated: Bool) {
         createEdgePath(self.view.frame.size)
         edgeLayer.alpha = 0.0
+        let height = self.view.frame.height
+        pauseContainerConstant.constant = -height
+        correctCounter.hidden = true
+        homeButton.hidden = false
         super.viewDidAppear(false)
+        
     }
     @IBOutlet weak var correctCounter: UILabel!
     @IBOutlet weak var wrongCounter: UILabel!
@@ -43,6 +51,11 @@ class timedGame: UIViewController {
     @IBOutlet weak var noteMarker: UIImageView!
     @IBOutlet weak var noteMarkerX: NSLayoutConstraint!
     @IBOutlet weak var noteMarkerY: NSLayoutConstraint!
+    
+    @IBOutlet weak var pauseContainerConstant: NSLayoutConstraint!
+    
+    @IBOutlet weak var homeButton: UIButton!
+    
     
     var edgeShapeLayer: CAShapeLayer!
     var edgeLayer: UIView!
@@ -71,6 +84,7 @@ class timedGame: UIViewController {
     var eString: [String] = ["F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E"]
     var GString: [String] = ["G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G"]
     
+ 
     
     @IBAction func startGame(sender: UIButton?) {
         correctCounter.text! = "0"
@@ -82,6 +96,8 @@ class timedGame: UIViewController {
         pauseButton.hidden = false
         startButton.hidden = true
         noteMarker.hidden = false
+        correctCounter.hidden = false
+        homeButton.hidden = true
     }
     
     func startTimer(){
@@ -184,6 +200,7 @@ class timedGame: UIViewController {
         if(userAnswer == randomAnswer){
             score = score + 100
             correctCounter.text! = "\(score)"
+            edgeShapeLayer.strokeColor = UIColor(hue: 0.333, saturation: 0.6, brightness: 0.8, alpha: 1.0).CGColor
             edgeLayer.alpha = 1.0
             self.view.layoutIfNeeded()
             delay(0.2){
@@ -196,14 +213,14 @@ class timedGame: UIViewController {
                 score = 0
             }else{
                 score = score - 50
-                edgeShapeLayer.strokeColor = UIColor(hue: 0.0, saturation: 0.6, brightness: 0.6, alpha: 1.0).CGColor
-                edgeLayer.alpha = 1.0
-                self.view.layoutIfNeeded()
-                delay(0.2){
-                    UIView.animateWithDuration(0.3, animations: {
-                        self.edgeLayer.alpha = 0.0
-                    })
-                }
+            }
+            edgeShapeLayer.strokeColor = UIColor(hue: 0.0, saturation: 0.6, brightness: 0.8, alpha: 1.0).CGColor
+            edgeLayer.alpha = 1.0
+            self.view.layoutIfNeeded()
+            delay(0.2){
+                UIView.animateWithDuration(0.3, animations: {
+                    self.edgeLayer.alpha = 0.0
+                })
             }
             correctCounter.text! = "\(score)"
         }
@@ -211,24 +228,26 @@ class timedGame: UIViewController {
     
     func reset(){
         getRandomAnswer()
-        edgeShapeLayer.strokeColor = UIColor(hue: 0.333, saturation: 0.6, brightness: 0.6, alpha: 1.0).CGColor
     }
     
     func endGame(){
         secondCount = 30
         timerView.text! = "\(secondCount)"
         
+        correctCounter.hidden = true
         correctCounter.text! = "\(score)"
         score = 0
         startButton.hidden = false
         buttonBool = false
         pauseButton.hidden = true
         noteMarker.hidden = true
+        homeButton.hidden = false
         
     }
     
     func endGameToStartNewGame(){
-        correctCounter.text! = "0"
+        correctCounter.hidden = true
+        homeButton.hidden = false
         secondCount = 30
         timerView.text! = "\(secondCount)"
         
@@ -241,41 +260,31 @@ class timedGame: UIViewController {
     
     
     
-    
-    
-    
+    var rootView: UIView?
     
     @IBAction func pauseGame(sender: UIButton) {
         if pauseBool{
+
+            let viewHeight = self.view.frame.height
+            pauseContainerConstant.constant = 0
+            UIView.animateWithDuration(0.2, animations: {
+                self.view.layoutIfNeeded()
+            })
             
-        blurView.hidden = false
-        
-        let current = blurView.frame.origin
-        let height = blurView.frame.height
-        let offScreen = CGPointMake(current.x, current.y + height)
-        blurView.frame.origin = offScreen
-        
-        UIView.animateWithDuration(0.25, animations: {
-        self.blurView.frame.origin = current
-        })
-        
-        
-        timeAtPause = secondCount
-        timer!.invalidate()
-        pauseBool = false
+            timeAtPause = secondCount
+            timer!.invalidate()
+            pauseBool = false
         }
     }
-    @IBAction func resumeGame(sender: UIButton) {
+    
+    @IBAction func resumeGame() {
         pauseBool = false
-        let current = blurView.frame.origin
-        let height = blurView.frame.height
-        let offScreen = CGPointMake(current.x, current.y + height)
-        UIView.animateWithDuration(0.25, animations: {
-            self.blurView.frame.origin = offScreen
+        let viewHeight = self.view.frame.height
+        pauseContainerConstant.constant = -viewHeight
+        UIView.animateWithDuration(0.2, animations: {
             self.pauseBool = false
+            self.view.layoutIfNeeded()
             }, completion: { success in
-                self.blurView.hidden = true
-                self.blurView.frame.origin = current
                 self.secondCount = self.timeAtPause + 1
                 self.startTimer()
                 self.pauseBool = true
@@ -283,17 +292,27 @@ class timedGame: UIViewController {
         
 
     }
-    @IBAction func restartGame(sender: UIButton) {
+    @IBAction func restartGame() {
         endGame()
         reset()
         timer?.invalidate()
-        blurView.hidden = true
-        startGame(nil)
+        let viewHeight = self.view.frame.height
+        pauseContainerConstant.constant = -viewHeight
+        UIView.animateWithDuration(0.2, animations: {
+            self.view.layoutIfNeeded()
+        })
+        delay(0.2){
+            self.startGame(nil)
+        }
     }
-    @IBAction func goToMainMenu(sender: UIButton) {
+    @IBAction func goToHome() {
         NSNotificationCenter.defaultCenter().postNotificationName(returnToMainMenu, object: self)
         delay(0.5){
-            self.blurView.hidden = true
+            let viewHeight = self.view.frame.height
+            self.pauseContainerConstant.constant = -viewHeight
+            UIView.animateWithDuration(0.2, animations: {
+                self.view.layoutIfNeeded()
+            })
         }
         endGameToStartNewGame()
         reset()
@@ -316,7 +335,7 @@ class timedGame: UIViewController {
         edgeShapeLayer = CAShapeLayer()
         edgeShapeLayer.frame = self.view.frame
         edgeShapeLayer.path = path
-        edgeShapeLayer.strokeColor = UIColor(hue: 0.333, saturation: 0.6, brightness: 0.6, alpha: 1.0).CGColor
+        edgeShapeLayer.strokeColor = UIColor(hue: 0.333, saturation: 0.6, brightness: 0.8, alpha: 1.0).CGColor
         edgeShapeLayer.lineWidth = 20.0
         edgeShapeLayer.fillColor = nil
         edgeShapeLayer.strokeEnd = 1.0
