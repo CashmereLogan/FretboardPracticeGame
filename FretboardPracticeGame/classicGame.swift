@@ -13,6 +13,9 @@ import UIKit
 class ClassicGame: UIViewController {
     
     override func viewDidLoad() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resumeGame", name: resumeGameNot, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "restartGame", name: restartGameNot, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "goToHome", name: goToHomeNot, object: nil)
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -20,7 +23,12 @@ class ClassicGame: UIViewController {
     override func viewDidAppear(animated: Bool) {
         createEdgePath(self.view.frame.size)
         edgeLayer.alpha = 0.0
+        let height = self.view.frame.height
+        pauseContainerConstant.constant = -height
+        correctCounter.hidden = true
+        //homeButton.hidden = false
         super.viewDidAppear(false)
+        
     }
     @IBOutlet weak var correctCounter: UILabel!
     @IBOutlet weak var wrongCounter: UILabel!
@@ -43,6 +51,11 @@ class ClassicGame: UIViewController {
     @IBOutlet weak var noteMarker: UIImageView!
     @IBOutlet weak var noteMarkerX: NSLayoutConstraint!
     @IBOutlet weak var noteMarkerY: NSLayoutConstraint!
+    
+    @IBOutlet weak var pauseContainerConstant: NSLayoutConstraint!
+    
+    @IBOutlet weak var homeButton: UIButton!
+    
     
     var edgeShapeLayer: CAShapeLayer!
     var edgeLayer: UIView!
@@ -71,6 +84,8 @@ class ClassicGame: UIViewController {
     var eString: [String] = ["F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E"]
     var GString: [String] = ["G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G"]
     
+    var timeToAnswer = 7.0
+    
     
     
     @IBAction func startGame(sender: UIButton?) {
@@ -83,6 +98,11 @@ class ClassicGame: UIViewController {
         pauseButton.hidden = false
         startButton.hidden = true
         noteMarker.hidden = false
+        correctCounter.hidden = false
+        homeButton.hidden = true
+        
+        
+        animateEdgeShapeLayer(1.0)
     }
     
     func startTimer(){
@@ -185,28 +205,46 @@ class ClassicGame: UIViewController {
         if(userAnswer == randomAnswer){
             score = score + 100
             correctCounter.text! = "\(score)"
-            edgeShapeLayer.strokeColor = UIColor(hue: 0.333, saturation: 0.6, brightness: 0.6, alpha: 1.0).CGColor
+            
+            let current = edgeShapeLayer.strokeEnd
+            let timeToAdd = CGFloat(0.4)
+            let timeLeft = 1.0 - current
+            
+            if(timeLeft > timeToAdd){
+                edgeShapeLayer.strokeEnd = timeLeft + 0.4
+            }else if(timeLeft <= timeToAdd){
+                edgeShapeLayer.strokeEnd = 1.0
+            }
+            
+            animateEdgeShapeLayer(edgeShapeLayer.strokeEnd)
+            
+            
+            
+            //flash green if answer is right
+            /*edgeShapeLayer.strokeColor = UIColor(hue: 0.333, saturation: 0.6, brightness: 0.8, alpha: 1.0).CGColor
             edgeLayer.alpha = 1.0
             self.view.layoutIfNeeded()
             delay(0.2){
                 UIView.animateWithDuration(0.3, animations: {
                     self.edgeLayer.alpha = 0.0
                 })
-            }
+            }*/
         }else{
             if(score == 0){
                 score = 0
             }else{
                 score = score - 50
-                edgeShapeLayer.strokeColor = UIColor(hue: 0.0, saturation: 0.6, brightness: 0.6, alpha: 1.0).CGColor
-                edgeLayer.alpha = 1.0
-                self.view.layoutIfNeeded()
-                delay(0.2){
-                    UIView.animateWithDuration(0.3, animations: {
-                        self.edgeLayer.alpha = 0.0
-                    })
-                }
             }
+            //Flash red if answer is wrong
+            /*edgeShapeLayer.strokeColor = UIColor(hue: 0.0, saturation: 0.6, brightness: 0.8, alpha: 1.0).CGColor
+            edgeLayer.alpha = 1.0
+            self.view.layoutIfNeeded()
+            delay(0.2){
+                UIView.animateWithDuration(0.3, animations: {
+                    self.edgeLayer.alpha = 0.0
+                })
+            }*/
+            
             correctCounter.text! = "\(score)"
         }
     }
@@ -219,17 +257,20 @@ class ClassicGame: UIViewController {
         secondCount = 30
         timerView.text! = "\(secondCount)"
         
+        correctCounter.hidden = true
         correctCounter.text! = "\(score)"
         score = 0
         startButton.hidden = false
         buttonBool = false
         pauseButton.hidden = true
         noteMarker.hidden = true
+        homeButton.hidden = false
         
     }
     
     func endGameToStartNewGame(){
-        correctCounter.text! = "0"
+        correctCounter.hidden = true
+        homeButton.hidden = false
         secondCount = 30
         timerView.text! = "\(secondCount)"
         
@@ -242,41 +283,31 @@ class ClassicGame: UIViewController {
     
     
     
-    
-    
-    
+    var rootView: UIView?
     
     @IBAction func pauseGame(sender: UIButton) {
         if pauseBool{
             
-            blurView.hidden = false
-            
-            let current = blurView.frame.origin
-            let height = blurView.frame.height
-            let offScreen = CGPointMake(current.x, current.y + height)
-            blurView.frame.origin = offScreen
-            
-            UIView.animateWithDuration(0.25, animations: {
-                self.blurView.frame.origin = current
+            let viewHeight = self.view.frame.height
+            pauseContainerConstant.constant = 0
+            UIView.animateWithDuration(0.2, animations: {
+                self.view.layoutIfNeeded()
             })
-            
             
             timeAtPause = secondCount
             timer!.invalidate()
             pauseBool = false
         }
     }
-    @IBAction func resumeGame(sender: UIButton) {
+    
+    @IBAction func resumeGame() {
         pauseBool = false
-        let current = blurView.frame.origin
-        let height = blurView.frame.height
-        let offScreen = CGPointMake(current.x, current.y + height)
-        UIView.animateWithDuration(0.25, animations: {
-            self.blurView.frame.origin = offScreen
+        let viewHeight = self.view.frame.height
+        pauseContainerConstant.constant = -viewHeight
+        UIView.animateWithDuration(0.2, animations: {
             self.pauseBool = false
+            self.view.layoutIfNeeded()
             }, completion: { success in
-                self.blurView.hidden = true
-                self.blurView.frame.origin = current
                 self.secondCount = self.timeAtPause + 1
                 self.startTimer()
                 self.pauseBool = true
@@ -284,20 +315,36 @@ class ClassicGame: UIViewController {
         
         
     }
-    @IBAction func restartGame(sender: UIButton) {
+    @IBAction func restartGame() {
         endGame()
         reset()
         timer?.invalidate()
-        blurView.hidden = true
-        startGame(nil)
+        let viewHeight = self.view.frame.height
+        pauseContainerConstant.constant = -viewHeight
+        UIView.animateWithDuration(0.2, animations: {
+            self.view.layoutIfNeeded()
+        })
+        delay(0.2){
+            self.startGame(nil)
+        }
     }
-    @IBAction func goToMainMenu(sender: UIButton) {
+    @IBAction func goToHome() {
         NSNotificationCenter.defaultCenter().postNotificationName(returnToMainMenu, object: self)
         delay(0.5){
-            self.blurView.hidden = true
+            let viewHeight = self.view.frame.height
+            self.pauseContainerConstant.constant = -viewHeight
+            UIView.animateWithDuration(0.2, animations: {
+                self.view.layoutIfNeeded()
+            })
         }
         endGameToStartNewGame()
         reset()
+    }
+    
+    func gameOver(){
+        
+        
+        
     }
     
     
@@ -307,20 +354,21 @@ class ClassicGame: UIViewController {
         let height = self.view!.frame.height
         
         let mutable = CGPathCreateMutable()
-        CGPathMoveToPoint(mutable, nil, 0, 0)
+        CGPathMoveToPoint(mutable, nil, width/2, 0)
         CGPathAddLineToPoint(mutable, nil, width, 0)
         CGPathAddLineToPoint(mutable, nil, width, height)
         CGPathAddLineToPoint(mutable, nil, 0, height)
         CGPathAddLineToPoint(mutable, nil, 0, 0)
+        CGPathAddLineToPoint(mutable, nil, width/2, 0)
         let path = CGPathCreateMutableCopy(mutable)
         
         edgeShapeLayer = CAShapeLayer()
         edgeShapeLayer.frame = self.view.frame
         edgeShapeLayer.path = path
-        edgeShapeLayer.strokeColor = UIColor(hue: 0.333, saturation: 0.6, brightness: 0.6, alpha: 1.0).CGColor
+        edgeShapeLayer.strokeColor = UIColor(hue: 0.333, saturation: 0.6, brightness: 0.8, alpha: 1.0).CGColor
         edgeShapeLayer.lineWidth = 20.0
         edgeShapeLayer.fillColor = nil
-        edgeShapeLayer.strokeEnd = 1.0
+    
         
         edgeLayer = UIImageView(frame: self.view.frame)
         self.view.addSubview(edgeLayer)
@@ -329,12 +377,33 @@ class ClassicGame: UIViewController {
         
     }
     
+    func animateEdgeShapeLayer(updatedStrokeEnd: CGFloat){
+        
+        edgeLayer.alpha = 1.0
+        edgeShapeLayer.strokeEnd = updatedStrokeEnd
+        
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.fromValue = CGFloat(1.0)
+        animation.toValue = CGFloat(0.0)
+        animation.duration = timeToAnswer
+        animation.delegate = self
+        animation.removedOnCompletion = false
+        animation.additive = false
+        animation.fillMode = kCAFillModeBackwards
+        edgeShapeLayer.addAnimation(animation, forKey: "strokeEnd")
+        
+        if (edgeShapeLayer.strokeEnd == 0.0) {
+            gameOver()
+    
+        
+    }
+    
+   func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+        edgeLayer.alpha = 0.0
+    }
     
     
-    
-    
-    
-    override func didReceiveMemoryWarning() {
+    func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -342,3 +411,4 @@ class ClassicGame: UIViewController {
     
 }
 
+}

@@ -211,7 +211,7 @@ class timedGame: UIViewController {
         }else{
             if(score == 0){
                 score = 0
-            }else{
+            }else{ 
                 score = score - 50
             }
             edgeShapeLayer.strokeColor = UIColor(hue: 0.0, saturation: 0.6, brightness: 0.8, alpha: 1.0).CGColor
