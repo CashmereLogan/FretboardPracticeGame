@@ -84,7 +84,9 @@ class ClassicGame: UIViewController {
     var eString: [String] = ["F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E"]
     var GString: [String] = ["G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G"]
     
-    var timeToAnswer = 7.0
+    var startTime = 7.0
+    var current: CGFloat = 0.0
+    var currentTime: Double = 0.0
     
     
     
@@ -102,7 +104,7 @@ class ClassicGame: UIViewController {
         homeButton.hidden = true
         
         
-        animateEdgeShapeLayer(1.0)
+        animateEdgeShapeLayer(false, current: 1.0, beginning: true, pause: false, timeToAnswer: startTime)
     }
     
     func startTimer(){
@@ -202,23 +204,18 @@ class ClassicGame: UIViewController {
     
     var score = 0
     func checkAnswer(){
+        
+        
+        if let presentation = edgeShapeLayer.presentationLayer() as? CAShapeLayer {
+            current = presentation.strokeEnd
+            currentTime = presentation.duration
+        }
+        
         if(userAnswer == randomAnswer){
             score = score + 100
             correctCounter.text! = "\(score)"
             
-            let current = edgeShapeLayer.strokeEnd
-            let timeToAdd = CGFloat(0.4)
-            let timeLeft = 1.0 - current
-            
-            if(timeLeft > timeToAdd){
-                edgeShapeLayer.strokeEnd = timeLeft + 0.4
-            }else if(timeLeft <= timeToAdd){
-                edgeShapeLayer.strokeEnd = 1.0
-            }
-            
-            animateEdgeShapeLayer(edgeShapeLayer.strokeEnd)
-            
-            
+            animateEdgeShapeLayer(true, current: current, beginning: false, pause: false, timeToAnswer: currentTime + (startTime * 0.4))
             
             //flash green if answer is right
             /*edgeShapeLayer.strokeColor = UIColor(hue: 0.333, saturation: 0.6, brightness: 0.8, alpha: 1.0).CGColor
@@ -235,6 +232,8 @@ class ClassicGame: UIViewController {
             }else{
                 score = score - 50
             }
+            
+            animateEdgeShapeLayer(false, current: current, beginning: false, pause: false, timeToAnswer: currentTime)
             //Flash red if answer is wrong
             /*edgeShapeLayer.strokeColor = UIColor(hue: 0.0, saturation: 0.6, brightness: 0.8, alpha: 1.0).CGColor
             edgeLayer.alpha = 1.0
@@ -288,6 +287,15 @@ class ClassicGame: UIViewController {
     @IBAction func pauseGame(sender: UIButton) {
         if pauseBool{
             
+            //Saves where the edgeShapeLayer is at at time of pause
+            if let presentation = edgeShapeLayer.presentationLayer() as? CAShapeLayer {
+                current = presentation.strokeEnd
+                currentTime = presentation.duration
+            }
+            edgeLayer.alpha = 0.0
+            UIView.animateWithDuration(0.2, animations: {
+                self.view.layoutIfNeeded()
+            })
             let viewHeight = self.view.frame.height
             pauseContainerConstant.constant = 0
             UIView.animateWithDuration(0.2, animations: {
@@ -301,6 +309,12 @@ class ClassicGame: UIViewController {
     }
     
     @IBAction func resumeGame() {
+        
+        animateEdgeShapeLayer(false, current: current, beginning: false, pause: true, timeToAnswer: currentTime)
+        edgeLayer.alpha = 1.0
+        UIView.animateWithDuration(0.2, animations: {
+            self.view.layoutIfNeeded()
+        })
         pauseBool = false
         let viewHeight = self.view.frame.height
         pauseContainerConstant.constant = -viewHeight
@@ -343,7 +357,7 @@ class ClassicGame: UIViewController {
     
     func gameOver(){
         
-        
+        //small window jumps up from the bottom
         
     }
     
@@ -377,20 +391,58 @@ class ClassicGame: UIViewController {
         
     }
     
-    func animateEdgeShapeLayer(updatedStrokeEnd: CGFloat){
+    func animateEdgeShapeLayer(correct: Bool, current: CGFloat, beginning: Bool, pause: Bool, timeToAnswer: Double){
         
         edgeLayer.alpha = 1.0
-        edgeShapeLayer.strokeEnd = updatedStrokeEnd
+        edgeShapeLayer.strokeEnd = current
         
+        var fillTime = 0.5
+        
+        //Drain Animation
         let animation = CABasicAnimation(keyPath: "strokeEnd")
-        animation.fromValue = CGFloat(1.0)
+        animation.fromValue = current
         animation.toValue = CGFloat(0.0)
         animation.duration = timeToAnswer
         animation.delegate = self
         animation.removedOnCompletion = false
         animation.additive = false
         animation.fillMode = kCAFillModeBackwards
-        edgeShapeLayer.addAnimation(animation, forKey: "strokeEnd")
+        
+        //Fill Animation
+        let fillAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        fillAnimation.fromValue = current
+        fillAnimation.toValue = current + CGFloat(0.4)
+        fillAnimation.duration = fillTime
+        fillAnimation.delegate = self
+        fillAnimation.removedOnCompletion = false
+        fillAnimation.additive = true
+        fillAnimation.fillMode = kCAFillModeBackwards
+        
+        if correct && beginning == false {
+            edgeShapeLayer.addAnimation(fillAnimation, forKey: "strokeEnd")
+            delay(fillTime + 0.1){
+                var newCurrent: CGFloat = 0.0
+                if let presentation = self.edgeShapeLayer.presentationLayer() {
+                    newCurrent = presentation.strokeEnd + CGFloat(0.4)
+                }
+                if (newCurrent > 1.0){
+                    newCurrent = 1.0
+                }
+                animation.fromValue = newCurrent
+                self.edgeShapeLayer.addAnimation(animation, forKey: "strokeEnd")
+            }
+        }else if (correct == false && beginning == false){
+            edgeShapeLayer.addAnimation(animation, forKey: "strokeEnd")
+            if pause == false{
+                edgeShapeLayer.strokeColor = UIColor(hue: 0.0, saturation: 0.6, brightness: 0.8, alpha: 1.0).CGColor
+                delay(0.2){
+                    self.edgeShapeLayer.strokeColor = UIColor(hue: 0.333, saturation: 0.6, brightness: 0.8, alpha: 1.0).CGColor
+                }
+            }
+            
+        }else if beginning{
+            edgeShapeLayer.addAnimation(animation, forKey: "strokeEnd")
+        }
         
         if (edgeShapeLayer.strokeEnd == 0.0) {
             gameOver()
